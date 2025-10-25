@@ -2,7 +2,18 @@
 
 A fun, colorful, and engaging rewards tracking app for kids! Help your children build good habits, complete chores, and achieve developmental milestones while earning points and badges.
 
+**NEW:** Now with user authentication and cloud storage! Your kids' progress syncs across all devices.
+
 ## Features
+
+### Authentication & Data Sync
+
+- Secure user authentication with email/password
+- Cloud storage with Firebase Firestore
+- Data syncs across all devices
+- Each family's data is private and secure
+- Password reset functionality
+- Offline support with automatic sync when online
 
 ### Activity Types
 
@@ -53,11 +64,21 @@ When kids complete activities, they're rewarded with:
 
 ## Getting Started
 
+### Prerequisites
+
+You'll need to set up Firebase for authentication and cloud storage. Follow the detailed guide in [FIREBASE_SETUP.md](./FIREBASE_SETUP.md).
+
 ### Installation
 
 ```bash
 npm install
 ```
+
+### Configuration
+
+1. Follow the [Firebase Setup Guide](./FIREBASE_SETUP.md) to create your Firebase project
+2. Create a `.env` file in the root directory (copy from `.env.example`)
+3. Add your Firebase configuration values to `.env`
 
 ### Development
 
@@ -85,12 +106,15 @@ You can deploy the built app to any static hosting service:
 
 ## Usage
 
-1. **Add Your Kids**: Click "Add New Kid" to create profiles with fun avatars and colors
-2. **Select a Kid**: Choose who's playing
-3. **Complete Activities**: Tap on activities as they're completed
-4. **Watch Celebrations**: Enjoy the confetti and badge animations!
-5. **Check Leaderboard**: See who's in the lead
-6. **Shop for Rewards**: Spend points in the reward store
+1. **Sign Up**: Create an account with your email and password
+2. **Login**: Access your family's dashboard
+3. **Add Your Kids**: Click "Add New Kid" to create profiles with fun avatars and colors
+4. **Select a Kid**: Choose who's playing
+5. **Complete Activities**: Tap on activities as they're completed
+6. **Watch Celebrations**: Enjoy the confetti and badge animations!
+7. **Check Leaderboard**: See who's in the lead
+8. **Shop for Rewards**: Spend points in the reward store
+9. **Access Anywhere**: Login from any device to see your data!
 
 ## Tech Stack
 
@@ -99,17 +123,19 @@ You can deploy the built app to any static hosting service:
 - **Vite** - Fast build tool
 - **Tailwind CSS** - Styling
 - **Framer Motion** - Smooth animations
-- **Zustand** - State management with persistence
+- **Zustand** - State management
+- **Firebase** - Authentication and Firestore database
 - **Lucide React** - Beautiful icons
 - **React Confetti** - Celebration effects
 
 ## Data Persistence
 
-All data is stored locally in the browser using Zustand's persist middleware. This means:
-- No server required
-- Data persists across sessions
-- Works offline
-- Private and secure
+All data is stored in Firebase Firestore and synced across devices:
+- Secure cloud storage with Firebase
+- Data syncs across all devices in real-time
+- Each family's data is completely private
+- Works offline with automatic sync when online
+- Secure authentication required
 
 ## Customization
 
@@ -129,14 +155,15 @@ Customize the color scheme in `tailwind.config.js` and `src/index.css`.
 
 Potential features to add:
 - [ ] AI-generated celebration videos (requires API integration)
-- [ ] Parent dashboard with activity management
-- [ ] Multiple family profiles
+- [ ] Parent dashboard with activity management UI
 - [ ] Export/import data
-- [ ] Weekly/monthly reports
-- [ ] Custom activity creation UI
+- [ ] Weekly/monthly reports and analytics
+- [ ] Custom activity creation UI (currently edit code)
 - [ ] Photo uploads for completed activities
 - [ ] Sound effects and music
 - [ ] Multi-language support
+- [ ] Push notifications for rewards earned
+- [ ] Family sharing (multiple parents access same kids)
 
 ## License
 
